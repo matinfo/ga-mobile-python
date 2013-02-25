@@ -30,7 +30,7 @@ def ga_mobile(request):
     else:
         host = request.META.get('HTTP_HOST', 'localhost')
     referer = quote_plus(request.META.get('HTTP_REFERER', ''))
-    path = quote_plus(request.META.get('REQUEST_URI', ''))
+    path = quote_plus(request.META.get('REQUEST_URI', request.META.get('PATH_INFO', '/')))
     
     src = 'http://' + host + ga_mobile_path + \
         "?utmac=" + ga_mobile_account + \
@@ -39,4 +39,4 @@ def ga_mobile(request):
         "&utmp=" + path + \
         "&guid=ON"
 
-    return '<img src="%s" width="1" height="1">' % src
+    return '<img src="%s" width="1" height="1" alt="">' % src
