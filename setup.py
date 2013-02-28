@@ -10,7 +10,7 @@ setup(
     author_email='',
     url='https://git@github.com:matinfo/ga-mobile-python.git',
     packages=['ga_app',],
-    py_modules=['ga',]
+    py_modules=['ga',],
     include_package_data=True,
     zip_safe=False,
     classifiers=[
