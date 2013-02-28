@@ -206,8 +206,7 @@ def track_page_view(environ):
                 "&utmac=" + utmac + \
                 "&utmcc=__utma%3D999.999.999.999.999.1%3B" + \
                 "&utmvid=" + visitor_id + \
-                "&utmip=" + get_ip(environ.get("REMOTE_ADDR",''))
-        # dbgMsg("utm_url: " + utm_url)    
+                "&utmip=" + get_ip(environ.get("REMOTE_ADDR",'')) 
         send_request_to_google_analytics(utm_url, environ)
 
     # // If the debug parameter is on, add a header to the response that contains
